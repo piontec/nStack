@@ -1,0 +1,61 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
+    <ProjectGuid>{F6C8766C-B08A-40EB-B2AA-CBBF0D1C272C}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <RootNamespace>NStack</RootNamespace>
+    <AssemblyName>nstack</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug</OutputPath>
+    <DefineConstants>DEBUG;</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Externalconsole>true</Externalconsole>
+    <PlatformTarget>x86</PlatformTarget>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+    <DebugType>full</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release</OutputPath>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Externalconsole>true</Externalconsole>
+    <PlatformTarget>x86</PlatformTarget>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\packages\Newtonsoft.Json.6.0.6\lib\net40\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="src\Auth\HttpMethod.cs" />
+    <Compile Include="src\Auth\IClientConnection.cs" />
+    <Compile Include="src\Exceptions\AuthDataNotAvailableException.cs" />
+    <Compile Include="src\Exceptions\AuthenticationException.cs" />
+    <Compile Include="src\Exceptions\MoreThanOneServiceFoundException.cs" />
+    <Compile Include="src\Exceptions\ServiceNotFoundException.cs" />
+    <Compile Include="src\Exceptions\UnknownEndPointTypeException.cs" />
+    <Compile Include="src\Auth\ClientConnection.cs" />
+    <Compile Include="src\Auth\AuthData.cs" />
+    <Compile Include="src\Auth\KeystoneResponse.cs" />
+    <Compile Include="src\ObjectStorage\ContainerInfo.cs" />
+    <Compile Include="src\ObjectStorage\ObjectInfo.cs" />
+    <Compile Include="src\ObjectStorage\ObjectStorage.cs" />
+    <Compile Include="src\WebClient\RequestHelper.cs" />
+    <Compile Include="src\WebClient\Response.cs" />
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
+</Project>
