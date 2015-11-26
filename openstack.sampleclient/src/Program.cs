@@ -16,7 +16,7 @@ namespace NStack.SampleClient
             var fileContentType = "text/plain; charset=UTF-8";
             var fileContent = "This is a sample file";
 
-            var auth = new AuthData ("piontec", "piontec", "Verbatimek");
+            var auth = new AuthData ("tenant", "user", "password");
             var clientConnection = new ClientConnection ();
             var kr = clientConnection.Connect ("http://192.168.30.20:5000/v2.0/tokens", auth);
             Console.WriteLine ("{0} valid to {1}", kr.Access.Token.Id, kr.Access.Token.Expires.ToLocalTime ());
